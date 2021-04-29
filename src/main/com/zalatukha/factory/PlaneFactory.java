@@ -6,11 +6,6 @@ public class PlaneFactory implements VehicleFactory{
 
     @Override
     public Plane createVehicle(String type) {
-        switch(type) {
-            case "su35":
-                return new PlaneSU35();
-            default:
-                return new RegularPlane();
-        }
+        return new Plane();
     }
 }

@@ -1,47 +1,46 @@
 package main.com.zalatukha.entity;
 
-public abstract class Car implements Vehicle {
+public class Car implements Vehicle {
     private String name;
+    Enum type;
+    int seats;
     private int maxSpeed;
     private VehicleColor color;
 
+    public Car() {
+    }
+
+    public Car(String name, Enum type, int seats, int maxSpeed, VehicleColor color) {
+        this.name = name;
+        this.type = type;
+        this.seats = seats;
+        this.maxSpeed = maxSpeed;
+        this.color = color;
+    }
+
     @Override
     public void move() {
-        System.out.println("1");
+        System.out.println("The car is moving forward");
     }
 
     @Override
     public void brake() {
-        System.out.println("2");
+        System.out.println("The car is braking");
     }
 
     @Override
     public void takePassengers() {
-        System.out.println("3");
+        System.out.println("Passengers get into the car");
     }
 
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getMaxSpeed() {
-        return maxSpeed;
-    }
-
-    public void setMaxSpeed(int maxSpeed) {
-        this.maxSpeed = maxSpeed;
-    }
-
-    public VehicleColor getColor() {
-        return color;
-    }
-
-    public void setColor(VehicleColor color) {
-        this.color = color;
+    @Override
+    public String toString() {
+        return "Car{" +
+                "name='" + name + '\'' +
+                ", type=" + type +
+                ", seats=" + seats +
+                ", maxSpeed=" + maxSpeed +
+                ", color=" + color +
+                '}';
     }
 }

@@ -1,4 +1,4 @@
-package main.com.zalatukha.singleton;
+package main.com.zalatukha.repository;
 
 import main.com.zalatukha.entity.Vehicle;
 
