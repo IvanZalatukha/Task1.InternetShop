@@ -25,6 +25,6 @@ public class CarFactory implements VehicleFactory {
             default:
                 carConstructor.constructCityCar(builder);
         }
-        return  builder.getResult();
+        return  builder.getCar();
     }
 }

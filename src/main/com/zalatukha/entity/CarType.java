@@ -1,5 +1,5 @@
 package main.com.zalatukha.entity;
 
-public enum Enum {
+public enum CarType {
     CITY_CAR, SPORT_CAR, TOY_CAR
 }

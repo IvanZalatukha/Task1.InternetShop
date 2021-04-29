@@ -1,8 +1,6 @@
 package main.com.zalatukha.builder;
 
-import main.com.zalatukha.entity.Car;
-import main.com.zalatukha.entity.Enum;
-import main.com.zalatukha.entity.VehicleColor;
+import main.com.zalatukha.entity.*;
 
 public class VehicleBuilder implements Builder {
     private String name;
@@ -21,6 +19,7 @@ public class VehicleBuilder implements Builder {
         this.type = type;
     }
 
+
     @Override
     public void setSeats(int seats) {
         this.seats = seats;
@@ -36,8 +35,12 @@ public class VehicleBuilder implements Builder {
         this.color = color;
     }
 
-    public Car getResult() {
-        return new Car(name, type, seats, maxSpeed, color);
+    public Car getCar() {
+        return new Car(name, (CarType) type, seats, maxSpeed, color);
     }
+    public Plane getPlane() {
+        return new Plane(name, (PlaneType) type, seats, maxSpeed, color);
+    }
+
 
 }

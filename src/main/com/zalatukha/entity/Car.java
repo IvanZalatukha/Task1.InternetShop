@@ -2,7 +2,7 @@ package main.com.zalatukha.entity;
 
 public class Car implements Vehicle {
     private String name;
-    Enum type;
+    CarType type;
     int seats;
     private int maxSpeed;
     private VehicleColor color;
@@ -10,7 +10,7 @@ public class Car implements Vehicle {
     public Car() {
     }
 
-    public Car(String name, Enum type, int seats, int maxSpeed, VehicleColor color) {
+    public Car(String name, CarType type, int seats, int maxSpeed, VehicleColor color) {
         this.name = name;
         this.type = type;
         this.seats = seats;

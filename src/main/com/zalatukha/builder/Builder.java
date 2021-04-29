@@ -1,7 +1,7 @@
 package main.com.zalatukha.builder;
 
-import main.com.zalatukha.entity.Enum;
 import main.com.zalatukha.entity.VehicleColor;
+
 
 public interface Builder {
     void setName(String name);
