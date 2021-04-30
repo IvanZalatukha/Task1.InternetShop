@@ -3,24 +3,25 @@ package main.com.zalatukha.factory;
 import main.com.zalatukha.builder.VehicleBuilder;
 import main.com.zalatukha.builder.CarConstructor;
 import main.com.zalatukha.entity.Car;
+import main.com.zalatukha.entity.CarType;
 
 public class CarFactory implements VehicleFactory {
 
     @Override
-    public Car createVehicle(String type) {
+    public Car createVehicle(Enum type) {
 
         CarConstructor carConstructor = new CarConstructor();
 
         VehicleBuilder builder = new VehicleBuilder();
 
-        switch(type) {
-            case "toy":
+        switch(CarType.valueOf(type.toString())) {
+            case TOY_CAR:
                 carConstructor.constructToyCar(builder);
                 break;
-            case "sport":
+            case SPORT_CAR:
                 carConstructor.constructSportsCar(builder);
                 break;
-            case "city":
+            case CITY_CAR:
                 carConstructor.constructCityCar(builder);
             default:
                 carConstructor.constructCityCar(builder);

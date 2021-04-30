@@ -28,6 +28,10 @@ public class Storage {
        return STORAGE.get(key);
     }
 
+    public Map<String, Vehicle> getStorage() {
+        return STORAGE;
+    }
+
     public void remove(String key) {
         STORAGE.remove(key);
     }

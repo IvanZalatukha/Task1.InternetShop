@@ -19,7 +19,6 @@ public class VehicleBuilder implements Builder {
         this.type = type;
     }
 
-
     @Override
     public void setSeats(int seats) {
         this.seats = seats;
@@ -38,6 +37,7 @@ public class VehicleBuilder implements Builder {
     public Car getCar() {
         return new Car(name, (CarType) type, seats, maxSpeed, color);
     }
+
     public Plane getPlane() {
         return new Plane(name, (PlaneType) type, seats, maxSpeed, color);
     }

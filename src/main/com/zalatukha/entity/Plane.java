@@ -30,4 +30,14 @@ public class Plane implements Vehicle {
         System.out.println("Passengers get into the plane");
     }
 
+    @Override
+    public String toString() {
+        return "Plane{" +
+                "name='" + name + '\'' +
+                ", type=" + type +
+                ", seats=" + seats +
+                ", maxSpeed=" + maxSpeed +
+                ", color=" + color +
+                '}';
+    }
 }

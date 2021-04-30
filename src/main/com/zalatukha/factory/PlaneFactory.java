@@ -7,24 +7,26 @@ import main.com.zalatukha.entity.*;
 public class PlaneFactory implements VehicleFactory{
 
     @Override
-    public Plane createVehicle(String type) {
+    public Plane createVehicle(Enum type) {
 
         PlaneConstructor planeConstructor = new PlaneConstructor();
 
         VehicleBuilder builder = new VehicleBuilder();
 
-        switch(type) {
-            case "toy":
+        switch(PlaneType.valueOf(type.toString())) {
+            case TOY_PLANE:
                 planeConstructor.constructToyPlane(builder);
                 break;
-            case "military":
+            case MILITARY_PLANE:
                 planeConstructor.constructMilitaryPlane(builder);
                 break;
-            case "passenger":
+            case PASSENGER_PLANE:
                 planeConstructor.constructPassengerPlane(builder);
             default:
                 planeConstructor.constructPassengerPlane(builder);
         }
         return  builder.getPlane();
     }
+
+
 }
