@@ -11,7 +11,6 @@ public class Demo {
 
     public static void main(String[] args) {
 
-
         InternetShop internetShop = new InternetShop();
 
         Client client = new Client("Ivan", 1, internetShop);

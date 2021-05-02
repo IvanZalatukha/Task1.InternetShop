@@ -5,11 +5,12 @@ import com.zalatukha.builder.PlaneConstructor;
 import com.zalatukha.builder.VehicleBuilder;
 import com.zalatukha.entity.Plane;
 import com.zalatukha.entity.PlaneType;
+import com.zalatukha.entity.Vehicle;
 
 public class PlaneFactory implements VehicleFactory{
 
     @Override
-    public Plane createVehicle(Enum type) {
+    public Vehicle createVehicle(Enum type) {
 
         PlaneConstructor planeConstructor = new PlaneConstructor();
 

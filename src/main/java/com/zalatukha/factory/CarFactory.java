@@ -4,12 +4,13 @@ import com.zalatukha.builder.CarConstructor;
 import com.zalatukha.builder.VehicleBuilder;
 import com.zalatukha.entity.Car;
 import com.zalatukha.entity.CarType;
+import com.zalatukha.entity.Vehicle;
 
 
 public class CarFactory implements VehicleFactory {
 
     @Override
-    public Car createVehicle(Enum type) {
+    public Vehicle createVehicle(Enum type) {
 
         CarConstructor carConstructor = new CarConstructor();
 
