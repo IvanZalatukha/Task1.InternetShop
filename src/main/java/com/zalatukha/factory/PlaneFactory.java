@@ -3,7 +3,6 @@ package com.zalatukha.factory;
 
 import com.zalatukha.builder.PlaneConstructor;
 import com.zalatukha.builder.VehicleBuilder;
-import com.zalatukha.entity.Plane;
 import com.zalatukha.entity.PlaneType;
 import com.zalatukha.entity.Vehicle;
 

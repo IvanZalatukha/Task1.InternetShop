@@ -2,7 +2,6 @@ package com.zalatukha.factory;
 
 import com.zalatukha.builder.CarConstructor;
 import com.zalatukha.builder.VehicleBuilder;
-import com.zalatukha.entity.Car;
 import com.zalatukha.entity.CarType;
 import com.zalatukha.entity.Vehicle;
 

@@ -15,6 +15,29 @@ public class Car implements Vehicle {
         this.color = color;
     }
 
+    public Car() {
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setType(CarType type) {
+        this.type = type;
+    }
+
+    public void setSeats(int seats) {
+        this.seats = seats;
+    }
+
+    public void setMaxSpeed(int maxSpeed) {
+        this.maxSpeed = maxSpeed;
+    }
+
+    public void setColor(VehicleColor color) {
+        this.color = color;
+    }
+
     @Override
     public void move() {
         System.out.println("The car is moving forward");

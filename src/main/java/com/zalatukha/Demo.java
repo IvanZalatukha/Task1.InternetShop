@@ -1,5 +1,9 @@
 package com.zalatukha;
 
+import com.zalatukha.builder2.CarBuilder;
+import com.zalatukha.builder2.CarCreator;
+import com.zalatukha.builder2.SportCarBuilder;
+import com.zalatukha.entity.Car;
 import com.zalatukha.entity.Vehicle;
 import com.zalatukha.repository.Storage;
 import com.zalatukha.shop.Client;
@@ -22,6 +26,15 @@ public class Demo {
         for (Map.Entry<String, Vehicle> pair: storage.getStorage().entrySet()) {
             System.out.println(pair);
         }
+
+        CarCreator carCreator = new CarCreator();
+        CarBuilder sportCarBuilder = new SportCarBuilder();
+
+        carCreator.setCarBuilder(sportCarBuilder);
+        carCreator.constructCar();
+
+        Car car = sportCarBuilder.getCar();
+        System.out.println(car);
 
     }
 }
