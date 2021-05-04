@@ -6,14 +6,11 @@ public class Plane implements Vehicle {
     int seats;
     private int maxSpeed;
     private VehicleColor color;
+    private int maxHeight;
 
-    public Plane(String name, PlaneType type, int seats, int maxSpeed, VehicleColor color) {
-        this.name = name;
-        this.type = type;
-        this.seats = seats;
-        this.maxSpeed = maxSpeed;
-        this.color = color;
+    public Plane() {
     }
+
 
     @Override
     public void move() {
@@ -38,6 +35,60 @@ public class Plane implements Vehicle {
                 ", seats=" + seats +
                 ", maxSpeed=" + maxSpeed +
                 ", color=" + color +
+                ", maxHeight=" + maxHeight +
                 '}';
     }
+
+    public static class Builder {
+        private String name;
+        private PlaneType type;
+        private int seats;
+        private int maxSpeed;
+        private VehicleColor color;
+        private int maxHeight;
+
+        public Builder buildName(String name) {
+            this.name = name;
+            return this;
+        }
+
+        public Builder buildType(PlaneType type) {
+            this.type = type;
+            return this;
+        }
+
+        public Builder buildSeats(int seats) {
+            this.seats = seats;
+            return this;
+        }
+
+        public Builder buildMaxSpeed(int maxSpeed) {
+            this.maxSpeed = maxSpeed;
+            return this;
+        }
+
+        public Builder buildColor(VehicleColor color) {
+            this.color = color;
+            return this;
+        }
+
+        public Builder buildMaxHeight(int maxHeight) {
+            this.maxHeight = maxHeight;
+            return this;
+        }
+
+        public Plane build() {
+            Plane plane = new Plane();
+            plane.name = this.name;
+            plane.type = this.type;
+            plane.seats = this.seats;
+            plane.maxSpeed = this.maxSpeed;
+            plane.color = this.color;
+            plane.maxHeight = this.maxHeight;
+
+            return plane;
+        }
+
+    }
+
 }

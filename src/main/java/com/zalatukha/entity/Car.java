@@ -2,40 +2,12 @@ package com.zalatukha.entity;
 
 public class Car implements Vehicle {
     private String name;
-    CarType type;
-    int seats;
+    private CarType type;
+    private int seats;
     private int maxSpeed;
     private VehicleColor color;
 
-    public Car(String name, CarType type, int seats, int maxSpeed, VehicleColor color) {
-        this.name = name;
-        this.type = type;
-        this.seats = seats;
-        this.maxSpeed = maxSpeed;
-        this.color = color;
-    }
-
     public Car() {
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setType(CarType type) {
-        this.type = type;
-    }
-
-    public void setSeats(int seats) {
-        this.seats = seats;
-    }
-
-    public void setMaxSpeed(int maxSpeed) {
-        this.maxSpeed = maxSpeed;
-    }
-
-    public void setColor(VehicleColor color) {
-        this.color = color;
     }
 
     @Override
@@ -63,4 +35,51 @@ public class Car implements Vehicle {
                 ", color=" + color +
                 '}';
     }
+
+    public static class Builder {
+        private String name;
+        private CarType type;
+        private int seats;
+        private int maxSpeed;
+        private VehicleColor color;
+
+        public Builder buildName(String name) {
+            this.name = name;
+            return this;
+        }
+
+        public Builder buildType(CarType type) {
+            this.type = type;
+            return this;
+        }
+
+        public Builder buildSeats(int seats) {
+            this.seats = seats;
+            return this;
+        }
+
+        public Builder buildMaxSpeed(int maxSpeed) {
+            this.maxSpeed = maxSpeed;
+            return this;
+        }
+
+        public Builder buildColor(VehicleColor color) {
+            this.color = color;
+            return this;
+        }
+
+        public Car build() {
+            Car car = new Car();
+            car.name = this.name;
+            car.type = this.type;
+            car.seats = this.seats;
+            car.maxSpeed = this.maxSpeed;
+            car.color = this.color;
+
+            return car;
+        }
+
+    }
+
+
 }

@@ -6,9 +6,7 @@ import com.zalatukha.command.CommandValue;
 
 public class InternetShop {
     Command command;
-static {
-    FillTheWarehouse.fillTheWarehouse();
-}
+
 
     public void makeAnOrder() {
         command = CommandProvider.getInstance().getCommand(CommandValue.ORDER);
