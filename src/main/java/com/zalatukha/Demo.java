@@ -3,6 +3,7 @@ package com.zalatukha;
 import com.zalatukha.entity.*;
 
 
+
 public class Demo {
 
     public static void main(String[] args) {
@@ -25,6 +26,8 @@ public class Demo {
 
         System.out.println(sportCar);
         System.out.println(militaryPlane);
+
+
 
 
 
