@@ -1,6 +1,6 @@
-package com.zalatukha.command.impl;
+package com.zalatukha.patterns.command.impl;
 
-import com.zalatukha.command.Command;
+import com.zalatukha.patterns.command.Command;
 
 public class OrderCommand implements Command {
 

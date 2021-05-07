@@ -1,4 +1,4 @@
-package com.zalatukha.entity;
+package com.zalatukha.patterns.entity;
 
 public enum VehicleColor {
     WHITE,

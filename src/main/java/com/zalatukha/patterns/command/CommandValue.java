@@ -1,4 +1,4 @@
-package com.zalatukha.command;
+package com.zalatukha.patterns.command;
 
 public enum CommandValue {
     ORDER,

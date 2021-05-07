@@ -1,7 +1,7 @@
-package com.zalatukha.repository;
+package com.zalatukha.patterns.repository;
 
 
-import com.zalatukha.entity.Vehicle;
+import com.zalatukha.patterns.entity.Vehicle;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -14,7 +14,7 @@ public class Storage {
     private Storage() {
     }
 
-    public static synchronized Storage getInstance() {
+    public static Storage getInstance() {
         if (instance == null) {
             instance = new Storage();
         }

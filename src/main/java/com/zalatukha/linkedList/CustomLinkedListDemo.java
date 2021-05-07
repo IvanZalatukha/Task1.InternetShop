@@ -1,5 +1,8 @@
 package com.zalatukha.linkedList;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class CustomLinkedListDemo {
     public static void main(String[] args) {
         CustomLinkedList<String> linkedList = new CustomLinkedList<>();
@@ -38,5 +41,10 @@ public class CustomLinkedListDemo {
             System.out.println(linkedList.getByIndex(i));
         }
 
+        Map<Integer, String> map = new HashMap<>();
+        String str = "str";
+
     }
+
+
 }

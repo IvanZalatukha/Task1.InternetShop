@@ -1,9 +1,9 @@
-package com.zalatukha.command;
+package com.zalatukha.patterns.command;
 
 
-import com.zalatukha.command.impl.OrderCommand;
-import com.zalatukha.command.impl.PaymentCommand;
-import com.zalatukha.command.impl.SendAnOrderCommand;
+import com.zalatukha.patterns.command.impl.OrderCommand;
+import com.zalatukha.patterns.command.impl.PaymentCommand;
+import com.zalatukha.patterns.command.impl.SendAnOrderCommand;
 
 import java.util.HashMap;
 import java.util.Map;

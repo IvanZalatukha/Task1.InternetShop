@@ -1,8 +1,8 @@
-package com.zalatukha.shop;
+package com.zalatukha.patterns.shop;
 
-import com.zalatukha.command.Command;
-import com.zalatukha.command.CommandProvider;
-import com.zalatukha.command.CommandValue;
+import com.zalatukha.patterns.command.Command;
+import com.zalatukha.patterns.command.CommandProvider;
+import com.zalatukha.patterns.command.CommandValue;
 
 public class InternetShop {
     Command command;

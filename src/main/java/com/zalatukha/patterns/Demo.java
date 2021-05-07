@@ -1,6 +1,6 @@
-package com.zalatukha;
+package com.zalatukha.patterns;
 
-import com.zalatukha.entity.*;
+import com.zalatukha.patterns.entity.*;
 
 
 

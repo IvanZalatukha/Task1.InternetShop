@@ -1,54 +1,58 @@
-package com.zalatukha.entity;
+package com.zalatukha.patterns.entity;
 
-public class Car implements Vehicle {
+public class Plane implements Vehicle {
     private String name;
-    private CarType type;
-    private int seats;
+    PlaneType type;
+    int seats;
     private int maxSpeed;
     private VehicleColor color;
+    private int maxHeight;
 
-    public Car() {
+    public Plane() {
     }
+
 
     @Override
     public void move() {
-        System.out.println("The car is moving forward");
+        System.out.println("The plane is moving forward");
     }
 
     @Override
     public void brake() {
-        System.out.println("The car is braking");
+        System.out.println("The plane is landing");
     }
 
     @Override
     public void takePassengers() {
-        System.out.println("Passengers get into the car");
+        System.out.println("Passengers get into the plane");
     }
 
     @Override
     public String toString() {
-        return "Car{" +
+        return "Plane{" +
                 "name='" + name + '\'' +
                 ", type=" + type +
                 ", seats=" + seats +
                 ", maxSpeed=" + maxSpeed +
                 ", color=" + color +
+                ", maxHeight=" + maxHeight +
                 '}';
     }
 
     public static class Builder {
         private String name;
-        private CarType type;
+        private PlaneType type;
         private int seats;
         private int maxSpeed;
         private VehicleColor color;
+        private int maxHeight;
 
         public Builder buildName(String name) {
             this.name = name;
             return this;
         }
 
-        public Builder buildType(CarType type) {
+        public Builder buildType(PlaneType type) {
             this.type = type;
             return this;
         }
@@ -68,15 +72,23 @@ public class Car implements Vehicle {
             return this;
         }
 
-        public Car build() {
-            Car car = new Car();
-            car.name = this.name;
-            car.type = this.type;
-            car.seats = this.seats;
-            car.maxSpeed = this.maxSpeed;
-            car.color = this.color;
-
-            return car;
+        public Builder buildMaxHeight(int maxHeight) {
+            this.maxHeight = maxHeight;
+            return this;
         }
+
+        public Plane build() {
+            Plane plane = new Plane();
+            plane.name = this.name;
+            plane.type = this.type;
+            plane.seats = this.seats;
+            plane.maxSpeed = this.maxSpeed;
+            plane.color = this.color;
+            plane.maxHeight = this.maxHeight;
+
+            return plane;
+        }
+
     }
+
 }

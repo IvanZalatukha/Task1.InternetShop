@@ -1,4 +1,4 @@
-package com.zalatukha.shop;
+package com.zalatukha.patterns.shop;
 
 public class Client {
     private String name;
