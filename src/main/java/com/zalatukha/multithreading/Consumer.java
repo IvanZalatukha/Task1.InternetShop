@@ -1,16 +1,34 @@
 package com.zalatukha.multithreading;
 
-public class Consumer implements Runnable {
-    private Buffer<Integer> buffer;
+import java.util.List;
 
-    public Consumer(Buffer<Integer> buffer) {
-        this.buffer = buffer;
+class Consumer implements Runnable {
+    private final List<Integer> sharedList;
+
+    public Consumer(List<Integer> sharedList) {
+        this.sharedList = sharedList;
     }
 
     @Override
     public void run() {
         while (true) {
-            System.out.println("Get value: " + buffer.consume());
+            try {
+                System.out.println("Consumed integer: " + consume());
+            } catch (InterruptedException ex) {
+                ex.printStackTrace();
+            }
+        }
+    }
+
+    // Метод, извлекающий элементы из общей очереди
+    private Integer consume() throws InterruptedException {
+        synchronized (sharedList) {
+            if (sharedList.isEmpty()) { // Если пуста, надо ждать
+                sharedList.wait();
+            }
+
+            sharedList.notifyAll();
+            return sharedList.remove(0);
         }
     }
 }
