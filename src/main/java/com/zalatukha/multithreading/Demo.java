@@ -8,6 +8,7 @@ public class Demo {
         int size = 4;
         Thread producerThread = new Thread(new Producer(sharedQueue, size));
         Thread consumerThread = new Thread(new Consumer(sharedQueue));
+
         producerThread.start();
         consumerThread.start();
     }

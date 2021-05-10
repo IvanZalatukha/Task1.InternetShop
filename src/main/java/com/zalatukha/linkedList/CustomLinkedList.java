@@ -93,11 +93,9 @@ public class CustomLinkedList<T> {
     }
 
     public void clearList() {
-
         head = null;
         tail = null;
         size = 0;
-
     }
 
     public int getSize() {
@@ -130,7 +128,7 @@ public class CustomLinkedList<T> {
                 '}';
     }
 
-    private  class Node<T> {
+    private class Node<T> {
         private T element;
         private Node next;
         private Node previous;

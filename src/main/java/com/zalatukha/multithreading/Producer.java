@@ -16,7 +16,7 @@ class Producer implements Runnable {
     public void run() {
         while (true) {
             try {
-                System.out.println("Produced: " + produce());
+                System.out.println("Produced integer: " + produce());
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
