@@ -1,14 +1,14 @@
 package com.zalatukha.dynamicProxy;
 
-public class ServiceImpl implements Service{
+public class ServiceImpl implements Service {
 
-    @Cache(type = CacheType.jvmMemory)
+    @Cache(type = CacheType.JVM_MEMORY)
     public User doHardWork(String name) {
         return new User(name);
     }
 
-    @Cache(type = CacheType.file)
-    public User doHardWorkElse(String name){
+    @Cache(type = CacheType.FILE)
+    public User doHardWorkElse(String name) {
         return new User(name);
     }
 }

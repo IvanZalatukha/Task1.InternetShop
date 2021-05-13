@@ -1,7 +1,5 @@
 package com.zalatukha.dynamicProxy;
 
-import com.zalatukha.dynamicProxy.exceptions.UserNotFoundException;
-
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.InvocationHandler;
@@ -13,40 +11,40 @@ import java.nio.file.StandardOpenOption;
 import java.util.*;
 
 public class ServiceInvocationHandler implements InvocationHandler {
-    private Service service;
-    Map<String, Object> jvmMemory;
-    File file;
+    private final Service SERVICE;
+    private final Map<String, Object> MEMORY;
+    private File file;
 
     public ServiceInvocationHandler(Service service) {
-        this.service = service;
-        this.jvmMemory = new HashMap<>();
-
+        this.SERVICE = service;
+        this.MEMORY = new HashMap<>();
     }
 
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
 
-        Cache cache = method.getAnnotation(Cache.class);
+        Cache cache = SERVICE.getClass().getMethod(method.getName(),
+                method.getParameterTypes()).getAnnotation(Cache.class);
+
         String name = (String) args[0];
-        if (cache.type().equals(CacheType.jvmMemory)) {
-            User user = (User) jvmMemory.get(name);
+
+        if (cache.type().equals(CacheType.JVM_MEMORY)) {
+            User user = (User) MEMORY.get(name);
             if (user == null) {
-                User newUser = new User(name);
-                jvmMemory.put(name, newUser);
-                return newUser;
+                user = new User(name);
+                MEMORY.put(name, user);
             }
+            return user;
         } else {
             file = new File("src/main/java/com/zalatukha/dynamicProxy/cache");
             User user = readUser(name);
             if (user == null) {
                 return writeUser(name);
             }
+            return user;
         }
-
-        throw new UserNotFoundException();
-
-//        return method.invoke(service, args);
     }
+
     private User writeUser(String name) throws IOException {
         List<String> lines = Collections.singletonList(name);
         Files.write(file.toPath(), lines, StandardCharsets.UTF_8, StandardOpenOption.APPEND);
