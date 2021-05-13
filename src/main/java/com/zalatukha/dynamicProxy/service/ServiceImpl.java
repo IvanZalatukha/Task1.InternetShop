@@ -1,4 +1,8 @@
-package com.zalatukha.dynamicProxy;
+package com.zalatukha.dynamicProxy.service;
+
+import com.zalatukha.dynamicProxy.Cache;
+import com.zalatukha.dynamicProxy.CacheType;
+import com.zalatukha.dynamicProxy.User;
 
 public class ServiceImpl implements Service {
 

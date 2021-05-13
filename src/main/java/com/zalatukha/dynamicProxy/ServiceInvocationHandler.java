@@ -1,5 +1,7 @@
 package com.zalatukha.dynamicProxy;
 
+import com.zalatukha.dynamicProxy.service.Service;
+
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.InvocationHandler;
@@ -36,7 +38,7 @@ public class ServiceInvocationHandler implements InvocationHandler {
             }
             return user;
         } else {
-            file = new File("src/main/java/com/zalatukha/dynamicProxy/cache");
+            file = new File("src/main/java/com/zalatukha/dynamicProxy/forWritingTestData");
             User user = readUser(name);
             if (user == null) {
                 return writeUser(name);
