@@ -18,6 +18,7 @@ public class Main {
         User user222 = service.doHardWorkElse("Andrew");
         User user3 = service.doHardWork("Addy");
         User user4 = service.doHardWork("Addy");
+        User user44 = service.doHardWorkElse2("FFF");
 
     }
 }

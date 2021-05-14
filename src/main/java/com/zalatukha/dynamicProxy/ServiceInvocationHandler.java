@@ -25,26 +25,30 @@ public class ServiceInvocationHandler implements InvocationHandler {
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
 
+        User user;
+        String name = (String) args[0];
+
         Cache cache = SERVICE.getClass().getMethod(method.getName(),
                 method.getParameterTypes()).getAnnotation(Cache.class);
 
-        String name = (String) args[0];
+        if (cache == null) {
+            return new User(name);
+        }
 
         if (cache.type().equals(CacheType.JVM_MEMORY)) {
-            User user = (User) MEMORY.get(name);
+            user = (User) MEMORY.get(name);
             if (user == null) {
                 user = new User(name);
                 MEMORY.put(name, user);
             }
-            return user;
         } else {
             file = new File("src/main/java/com/zalatukha/dynamicProxy/forWritingTestData");
-            User user = readUser(name);
+            user = readUser(name);
             if (user == null) {
                 return writeUser(name);
             }
-            return user;
         }
+        return user;
     }
 
     private User writeUser(String name) throws IOException {
