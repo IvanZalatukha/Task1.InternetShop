@@ -10,6 +10,22 @@ public class Car implements Vehicle {
     public Car() {
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getMaxSpeed() {
+        return maxSpeed;
+    }
+
+    public void setMaxSpeed(int maxSpeed) {
+        this.maxSpeed = maxSpeed;
+    }
+
     @Override
     public void move() {
         System.out.println("The car is moving forward");

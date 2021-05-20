@@ -1,5 +1,6 @@
 package com.zalatukha.patterns;
 
+import com.zalatukha.patterns.dao.ImplCarCRUD;
 import com.zalatukha.patterns.entity.*;
 
 
@@ -24,8 +25,11 @@ public class Demo {
                 .buildSeats(2)
                 .build();
 
-        System.out.println(sportCar);
-        System.out.println(militaryPlane);
+        ImplCarCRUD implCarCRUD = new ImplCarCRUD();
+        Car car = new Car();
+        car.setName("FERARI");
+        car.setMaxSpeed(333);
+        implCarCRUD.create(car);
 
 
 
