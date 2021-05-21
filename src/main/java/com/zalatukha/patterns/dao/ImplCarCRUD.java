@@ -2,7 +2,6 @@ package com.zalatukha.patterns.dao;
 
 import com.zalatukha.patterns.entity.Car;
 
-import java.net.ConnectException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -88,6 +87,19 @@ public class ImplCarCRUD implements CRUDRepository {
 
     @Override
     public boolean update(int id, Object obj) {
+        Car car = (Car) obj;
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(UPDATE);
+            preparedStatement.setString(1, car.getName());
+            preparedStatement.setInt(2, car.getMaxSpeed());
+            preparedStatement.setInt(3, id);
+            int i = preparedStatement.executeUpdate();
+            if (i == 1) {
+                return true;
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
         return false;
     }
 

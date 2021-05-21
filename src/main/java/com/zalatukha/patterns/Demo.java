@@ -3,8 +3,6 @@ package com.zalatukha.patterns;
 import com.zalatukha.patterns.dao.ImplCarCRUD;
 import com.zalatukha.patterns.entity.*;
 
-
-
 public class Demo {
 
     public static void main(String[] args) {
@@ -26,11 +24,12 @@ public class Demo {
                 .build();
 
         ImplCarCRUD implCarCRUD = new ImplCarCRUD();
-        Car car = new Car();
-        car.setName("FERARI");
-        car.setMaxSpeed(333);
-        implCarCRUD.create(car);
 
+        Car newCar = new Car();
+        newCar.setName("new SuperSportCar");
+        newCar.setMaxSpeed(1111);
+
+        implCarCRUD.update(1, newCar);
 
 
 
