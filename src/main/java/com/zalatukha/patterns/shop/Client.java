@@ -1,14 +1,23 @@
 package com.zalatukha.patterns.shop;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "clients")
 public class Client {
+
+    @Column(name = "name")
     private String name;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    InternetShop shop;
 
     public Client(String name, int id, InternetShop shop) {
         this.name = name;
         this.id = id;
-        this.shop = shop;
+    }
+
+    public Client() {
     }
 
     public String getName() {
@@ -25,18 +34,6 @@ public class Client {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public void makeAnOrder() {
-        shop.makeAnOrder();
-    }
-
-    public void makeThePayment() {
-        shop.payment();
-    }
-
-    public void takeOrder() {
-        shop.sendVehicle();
     }
 
     @Override

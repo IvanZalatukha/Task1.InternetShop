@@ -15,6 +15,10 @@ public class ImplCarCRUD implements CRUDRepository {
     private static final String UPDATE = "UPDATE cars SET name=?, max_speed=? WHERE id=?";
     private static Connection connection;
 
+    public static void setConnection(Connection connection) {
+        ImplCarCRUD.connection = connection;
+    }
+
     static {
         try {
              connection = DriverManager.getConnection("jdbc:mysql://localhost:3307/db", "test", "test");

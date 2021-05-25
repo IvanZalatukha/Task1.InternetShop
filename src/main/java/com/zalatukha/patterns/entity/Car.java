@@ -1,11 +1,18 @@
 package com.zalatukha.patterns.entity;
 
+import javax.persistence.*;
+
+@Entity
 public class Car implements Vehicle {
     private String name;
     private CarType type;
     private int seats;
     private int maxSpeed;
     private VehicleColor color;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     public Car() {
     }
@@ -50,6 +57,15 @@ public class Car implements Vehicle {
                 ", maxSpeed=" + maxSpeed +
                 ", color=" + color +
                 '}';
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    @Id
+    public Long getId() {
+        return id;
     }
 
     public static class Builder {

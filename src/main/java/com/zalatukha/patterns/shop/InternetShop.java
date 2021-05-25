@@ -4,7 +4,9 @@ import com.zalatukha.patterns.command.Command;
 import com.zalatukha.patterns.command.CommandProvider;
 import com.zalatukha.patterns.command.CommandValue;
 
-public class InternetShop {
+import java.io.Serializable;
+
+public class InternetShop implements Serializable {
     Command command;
 
 
