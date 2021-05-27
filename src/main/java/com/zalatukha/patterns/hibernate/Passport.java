@@ -8,7 +8,7 @@ public class Passport {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
-    private Long id;
+    private int id;
 
     @Column
     private String series;
@@ -28,7 +28,7 @@ public class Passport {
         this.number = number;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
@@ -62,7 +62,6 @@ public class Passport {
                 "id=" + id +
                 ", series='" + series + '\'' +
                 ", number=" + number +
-                ", owner=" + owner +
                 '}';
     }
 }
