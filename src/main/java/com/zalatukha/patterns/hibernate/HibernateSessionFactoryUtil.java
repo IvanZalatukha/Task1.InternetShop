@@ -15,8 +15,8 @@ public class HibernateSessionFactoryUtil {
         if (sessionFactory == null) {
             try {
                 Configuration configuration = new Configuration().configure();
-                configuration.addAnnotatedClass(Client.class);
-                configuration.addAnnotatedClass(Car.class);
+                configuration.addAnnotatedClass(User.class);
+                configuration.addAnnotatedClass(Passport.class);
                 StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties());
                 sessionFactory = configuration.buildSessionFactory(builder.build());
 

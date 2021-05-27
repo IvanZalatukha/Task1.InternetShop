@@ -1,39 +1,36 @@
 package com.zalatukha.patterns.hibernate;
 
-import com.zalatukha.patterns.entity.Car;
-import com.zalatukha.patterns.shop.Client;
-
 import java.util.List;
 
 public class UserService {
 
-    private UserDao usersDao = new UserDao();
+    private final UserDao usersDao = new UserDao();
 
     public UserService() {
     }
 
-    public Client findUser(int id) {
+    public User findUser(int id) {
         return usersDao.findById(id);
     }
 
-    public void saveUser(Client client) {
-        usersDao.save(client);
+    public void saveUser(User user) {
+        usersDao.save(user);
     }
 
-    public void deleteUser(Client client) {
-        usersDao.delete(client);
+    public void deleteUser(User user) {
+        usersDao.delete(user);
     }
 
-    public void updateUser(Client client) {
-        usersDao.update(client);
+    public void updateUser(User user) {
+        usersDao.update(user);
     }
 
-    public List<Car> findAllUsers() {
+    public List<User> findAllUsers() {
         return usersDao.findAll();
     }
 
-    public Car findAutoById(int id) {
-        return usersDao.findAutoById(id);
+    public Passport findPassportById(int id) {
+        return usersDao.findPassportById(id);
     }
 
 

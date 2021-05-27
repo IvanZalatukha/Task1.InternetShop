@@ -1,7 +1,5 @@
 package com.zalatukha.patterns.hibernate;
 
-import com.zalatukha.patterns.entity.Car;
-import com.zalatukha.patterns.shop.Client;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -9,40 +7,40 @@ import java.util.List;
 
 public class UserDao {
 
-    public Client findById(int id) {
-        return HibernateSessionFactoryUtil.getSessionFactory().openSession().get(Client.class, id);
+    public User findById(int id) {
+        return HibernateSessionFactoryUtil.getSessionFactory().openSession().get(User.class, id);
     }
 
-    public void save(Client client) {
+    public void save(User user) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
-        Transaction tx1 = session.beginTransaction();
-        session.save(client);
-        tx1.commit();
+        Transaction transaction = session.beginTransaction();
+        session.save(user);
+        transaction.commit();
         session.close();
     }
 
-    public void update(Client client) {
+    public void update(User user) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
-        Transaction tx1 = session.beginTransaction();
-        session.update(client);
-        tx1.commit();
+        Transaction transaction = session.beginTransaction();
+        session.update(user);
+        transaction.commit();
         session.close();
     }
 
-    public void delete(Client client) {
+    public void delete(User user) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
-        Transaction tx1 = session.beginTransaction();
-        session.delete(client);
-        tx1.commit();
+        Transaction transaction = session.beginTransaction();
+        session.delete(user);
+        transaction.commit();
         session.close();
     }
 
-    public Car findAutoById(int id) {
-        return HibernateSessionFactoryUtil.getSessionFactory().openSession().get(Car.class, id);
+    public Passport findPassportById(int id) {
+        return HibernateSessionFactoryUtil.getSessionFactory().openSession().get(Passport.class, id);
     }
 
-    public List<Car> findAll() {
-        List<Car> users = (List<Car>)  HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery("From Client").list();
+    public List<User> findAll() {
+        List<User> users = (List<User>)  HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery("From User ").list();
         return users;
     }
 }
