@@ -8,6 +8,9 @@ import com.zalatukha.patterns.shop.Client;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 
 public class Demo {
@@ -27,16 +30,9 @@ public class Demo {
 //        Car carForTestHibernate = new Car.Builder().buildName("car for hibernate").buildMaxSpeed(777).build();
 //        client.setName("Galya");
 //        userService.saveUser(client);
+        int count = 0;
 
-
-        Class.forName("org.h2.Driver");
-        Connection con = DriverManager.getConnection("jdbc:h2:tcp://localhost/~/test", "sa", "");
-
-
-        ImplCarCRUD implCarCRUD = new ImplCarCRUD();
-        ImplCarCRUD.setConnection(con);
-
-        implCarCRUD.create(new Car.Builder().buildName("111").buildMaxSpeed(111).build());
+        AtomicInteger atomicInteger = new AtomicInteger();
 
 
 

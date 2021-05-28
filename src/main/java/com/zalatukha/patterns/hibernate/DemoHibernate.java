@@ -13,6 +13,8 @@ public class DemoHibernate {
         for(User a: users) {
             System.out.println(a);
         }
+        System.out.println();
+
 
 
 
