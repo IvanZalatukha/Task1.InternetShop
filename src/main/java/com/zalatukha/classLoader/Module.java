@@ -6,7 +6,9 @@ public interface Module {
     int EXIT_FAILURE = 1;
 
     void load();
+
     int run();
+
     void unload();
 
 }

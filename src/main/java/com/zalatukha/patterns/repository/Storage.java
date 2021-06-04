@@ -26,7 +26,7 @@ public class Storage {
     }
 
     public Vehicle get(String key) {
-       return STORAGE.get(key);
+        return STORAGE.get(key);
     }
 
     public Map<String, Vehicle> getStorage() {

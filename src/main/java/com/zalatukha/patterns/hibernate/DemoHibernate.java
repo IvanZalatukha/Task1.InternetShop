@@ -10,12 +10,10 @@ public class DemoHibernate {
 
         List<User> users = userService.findAllUsers();
 
-        for(User a: users) {
+        for (User a : users) {
             System.out.println(a);
         }
         System.out.println();
-
-
 
 
     }

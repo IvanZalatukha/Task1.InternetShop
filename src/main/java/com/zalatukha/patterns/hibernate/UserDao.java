@@ -53,7 +53,7 @@ public class UserDao {
         Passport passport = null;
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction transaction = session.beginTransaction();
-        try{
+        try {
             session.get(Passport.class, id);
             transaction.commit();
         } catch (HibernateException e) {

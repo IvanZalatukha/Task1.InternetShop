@@ -21,7 +21,7 @@ public class ImplCarCRUD implements CRUDRepository {
 
     static {
         try {
-             connection = DriverManager.getConnection("jdbc:mysql://localhost:3307/db", "test", "test");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3307/db", "test", "test");
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }

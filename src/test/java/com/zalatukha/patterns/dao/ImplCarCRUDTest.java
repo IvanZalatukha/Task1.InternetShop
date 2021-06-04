@@ -4,7 +4,9 @@ import com.zalatukha.patterns.entity.Car;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
+
 import static org.junit.Assert.*;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -20,7 +22,7 @@ public class ImplCarCRUDTest {
     public static void initDB() {
         try {
             Class.forName("org.h2.Driver");
-             con = DriverManager.getConnection("jdbc:h2:tcp://localhost/~/test", "sa", "");
+            con = DriverManager.getConnection("jdbc:h2:tcp://localhost/~/test", "sa", "");
             ImplCarCRUD.setConnection(con);
 
             PreparedStatement initDB = con.prepareStatement("drop table cars if exists ;" +
@@ -39,7 +41,6 @@ public class ImplCarCRUDTest {
             preparedStatement.setString(1, ferrari.getName());
             preparedStatement.setInt(2, ferrari.getMaxSpeed());
             preparedStatement.executeUpdate();
-
 
 
         } catch (ClassNotFoundException | SQLException e) {

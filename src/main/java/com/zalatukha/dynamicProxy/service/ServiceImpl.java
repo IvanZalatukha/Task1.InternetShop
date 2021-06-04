@@ -15,6 +15,7 @@ public class ServiceImpl implements Service {
     public User doHardWorkElse(String name) {
         return new User(name);
     }
+
     public User doHardWorkElse2(String name) {
         return new User(name);
     }
